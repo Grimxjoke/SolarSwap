@@ -2,8 +2,10 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
+
+//COMPONENTS IMPORT
 import Nav from "../../components/Nav";
-// import { Main } from "next/document";
+import Footer from "../../components/Footer";
 
 // WAGMI/RAINDOW-KIT IMPORT
 import { configureChains, createClient, WagmiConfig } from "wagmi";
@@ -28,7 +30,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Nav>Hello there</Nav>
+      <main>
+        <Nav />
+      </main>
+      <Footer />
     </>
   );
 }
