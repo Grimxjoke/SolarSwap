@@ -4,8 +4,9 @@ import Image from "next/image";
 import { Inter } from "@next/font/google";
 
 //COMPONENTS IMPORT
-import Nav from "../../components/Nav";
-import Footer from "../../components/Footer";
+// import Nav from "../../components/Nav";
+import Footer from "components/Footer";
+import Nav from "components/Nav";
 
 // WAGMI/RAINDOW-KIT IMPORT
 import { configureChains, createClient, WagmiConfig } from "wagmi";
@@ -32,6 +33,7 @@ export default function Home() {
       </Head>
       <main>
         <Nav />
+        <ConnectButton />
       </main>
       <Footer />
     </>
