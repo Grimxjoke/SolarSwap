@@ -1,5 +1,3 @@
-import "@/styles/globals.css";
-
 import { ChakraProvider } from "@chakra-ui/react";
 import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import type { AppProps } from "next/app";
