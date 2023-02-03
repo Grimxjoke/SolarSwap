@@ -1,12 +1,11 @@
 //NEXT IMPORT
 import Head from "next/head";
 import Image from "next/image";
-import { Inter } from "@next/font/google";
 
 //COMPONENTS IMPORT
-// import Nav from "../../components/Nav";
-import Footer from "../../components/Footer";
-import Nav from "../../components/Nav";
+import Footer from "components/Footer";
+import Nav from "components/Nav";
+import Swap from "components/Swap";
 
 // WAGMI/RAINDOW-KIT IMPORT
 import { configureChains, createClient, WagmiConfig } from "wagmi";
@@ -21,8 +20,6 @@ import {
 import { Box, Button, Text } from "@chakra-ui/react";
 
 export default function Home() {
-  const walletConection = () => {};
-
   return (
     <>
       <Head>
@@ -33,6 +30,7 @@ export default function Home() {
       </Head>
       <main>
         <Nav />
+        <Swap />
       </main>
       <Footer />
     </>
