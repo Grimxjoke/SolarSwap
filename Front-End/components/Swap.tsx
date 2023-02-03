@@ -15,7 +15,16 @@ import { parseEther, formatEther } from "ethers/lib/utils";
 import { getProvider } from "@wagmi/core";
 import { getAccount } from "@wagmi/core";
 
-import { Box, Button, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Input,
+  Text,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+} from "@chakra-ui/react";
 import { useSigner } from "wagmi";
 
 export default function Swap() {
@@ -88,7 +97,57 @@ export default function Swap() {
 
   return (
     <>
-      <h1> Wallet Status : {account.status}</h1>
+      {mounted && (
+        <>
+          <h1> Wallet Status : {account.status}</h1>
+          <Box display="flex" flexDirection="column" alignItems="center">
+            <Text p="1rem">Swap</Text>
+            <Box
+              display="flex"
+              border="2px"
+              borderRadius="10px"
+              justifyContent="center"
+              borderColor="black"
+              width="30vw"
+            >
+              <Input placeholder="0" border="0px" />
+
+              <Menu>
+                <MenuButton as={Button}>WFil</MenuButton>
+
+                <MenuList>
+                  <MenuItem>DAI</MenuItem>
+                  <MenuItem>wETH</MenuItem>
+                  <MenuItem>DAI</MenuItem>
+                  <MenuItem>BUSD</MenuItem>
+                </MenuList>
+              </Menu>
+            </Box>
+            ↓
+            <Box
+              display="flex"
+              border="2px"
+              borderRadius="10px"
+              justifyContent="center"
+              borderColor="black"
+              width="30vw"
+            >
+              <Input placeholder="0" border="0px" />
+
+              <Menu>
+                <MenuButton as={Button}>wFIL</MenuButton>
+
+                <MenuList>
+                  <MenuItem>DAI</MenuItem>
+                  <MenuItem>wETH</MenuItem>
+                  <MenuItem>DAI</MenuItem>
+                  <MenuItem>BUSD</MenuItem>
+                </MenuList>
+              </Menu>
+            </Box>
+          </Box>
+        </>
+      )}
     </>
   );
 }
