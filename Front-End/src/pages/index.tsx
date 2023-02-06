@@ -6,6 +6,7 @@ import Image from "next/image";
 import Footer from "components/Footer";
 import Nav from "components/Nav";
 import Swap from "components/Swap";
+import {SwapForm} from "components/Swap2";
 
 // WAGMI/RAINDOW-KIT IMPORT
 import { configureChains, createClient, WagmiConfig } from "wagmi";
@@ -31,6 +32,7 @@ export default function Home() {
       <main>
         <Nav />
         <Swap />
+        <SwapForm />
       </main>
       <Footer />
     </>

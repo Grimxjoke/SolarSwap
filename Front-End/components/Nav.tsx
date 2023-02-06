@@ -40,7 +40,13 @@ export default function Nav() {
               </Button>
 
               <Button display="flex" justifyContent="right" px="0">
-                {mounted && <ConnectButton showBalance={false} />}
+                {mounted && <ConnectButton 
+                              label="Connect Web3"
+                              accountStatus={"full"}
+                              chainStatus={"none"}
+                              showBalance={false}
+                            />
+                }
               </Button>
             </Stack>
           </Flex>

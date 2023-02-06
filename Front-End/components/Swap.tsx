@@ -32,6 +32,8 @@ export default function Swap() {
   const provider = getProvider();
   const account = getAccount();
   const signer = useSigner();
+  const [selectedItemIn, setSelectedItemIn] = useState("WFil");
+  const [selectedItemOut, setSelectedItemOut] = useState("WFil");
 
   //   const swapTokens = async(
   //   address1 : any,
@@ -113,13 +115,16 @@ export default function Swap() {
               <Input placeholder="0" border="0px" />
 
               <Menu>
-                <MenuButton as={Button}>WFil</MenuButton>
+                <MenuButton as={Button} onClick={() => setSelectedItemIn(selectedItemIn)}>
+                  {selectedItemIn}
+                </MenuButton>
 
                 <MenuList>
-                  <MenuItem>DAI</MenuItem>
-                  <MenuItem>wETH</MenuItem>
-                  <MenuItem>DAI</MenuItem>
-                  <MenuItem>BUSD</MenuItem>
+                  <MenuItem onClick={() => setSelectedItemIn("wFIL")}>wFIL</MenuItem>
+                  <MenuItem onClick={() => setSelectedItemIn("DAI")}>DAI</MenuItem>
+                  <MenuItem onClick={() => setSelectedItemIn("wETH")}>wETH</MenuItem>
+                  <MenuItem onClick={() => setSelectedItemIn("DAI")}>DAI</MenuItem>
+                  <MenuItem onClick={() => setSelectedItemIn("BUSD")}>BUSD</MenuItem>
                 </MenuList>
               </Menu>
             </Box>
@@ -135,13 +140,16 @@ export default function Swap() {
               <Input placeholder="0" border="0px" />
 
               <Menu>
-                <MenuButton as={Button}>wFIL</MenuButton>
+                <MenuButton as={Button} onClick={() => setSelectedItemOut(selectedItemOut)}>
+                  {selectedItemOut}
+                </MenuButton>
 
                 <MenuList>
-                  <MenuItem>DAI</MenuItem>
-                  <MenuItem>wETH</MenuItem>
-                  <MenuItem>DAI</MenuItem>
-                  <MenuItem>BUSD</MenuItem>
+                  <MenuItem onClick={() => setSelectedItemOut("wFIL")}>wFIL</MenuItem>
+                  <MenuItem onClick={() => setSelectedItemOut("DAI")}>DAI</MenuItem>
+                  <MenuItem onClick={() => setSelectedItemOut("wETH")}>wETH</MenuItem>
+                  <MenuItem onClick={() => setSelectedItemOut("DAI")}>DAI</MenuItem>
+                  <MenuItem onClick={() => setSelectedItemOut("BUSD")}>BUSD</MenuItem>
                 </MenuList>
               </Menu>
             </Box>
